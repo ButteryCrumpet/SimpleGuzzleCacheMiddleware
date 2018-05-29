@@ -72,8 +72,8 @@ class SimpleGuzzleCacheMiddleware
                         if ($response->getBody()->isSeekable()) {
                             $response->getBody()->seek(0);
                         }
-                        return $response->withHeader(self::CACHE_HEADER, self::SET);
                     }
+                    return $response->withHeader(self::CACHE_HEADER, self::SET);
                 },
                 function (ResponseInterface $response) {
                     return $response;
