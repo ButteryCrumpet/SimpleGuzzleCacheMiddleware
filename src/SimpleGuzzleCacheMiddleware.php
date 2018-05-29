@@ -43,7 +43,7 @@ class SimpleGuzzleCacheMiddleware
 
     /**
      * @param callable $handler
-     * 
+     *
      * @return callable
      */
     public function __invoke(callable $handler)
@@ -69,6 +69,9 @@ class SimpleGuzzleCacheMiddleware
                 function (ResponseInterface $response) use ($uri) {
                     if ($response->getStatusCode() <= 400) {
                         $this->setCachedResponse($uri, $response);
+                        if ($response->getBody()->isSeekable()) {
+                            $response->getBody()->seek(0);
+                        }
                         return $response->withHeader(self::CACHE_HEADER, self::SET);
                     }
                 },
