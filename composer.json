@@ -1,0 +1,26 @@
+{
+    "name": "butterycrumpet/simpleguzzlecachemiddleware",
+    "type": "library",
+    "description": "Simple cached api request parser",
+    "keywords": ["cache","caching","file system", "http", "client", "middleware", "guzzle"],
+    "license": "MIT",
+    "authors": [{
+        "name": "Simon Leigh",
+        "email": "sleigh@produce-pro.co.jp"
+    }],
+
+    "autoload": {
+        "psr-4": {
+            "SimpleGuzzleCacheMiddleware\\": "src"
+        }
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^0.9.2",
+        "phpunit/phpunit": "^7.1",
+        "psr/simple-cache": "^1.0",
+        "guzzlehttp/guzzle": "^6.3",
+        "butterycrumpet/supersimplecache": "^0.1.0"
+    },
+    "require": {
+    }
+}
